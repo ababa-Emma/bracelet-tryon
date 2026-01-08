@@ -1,2 +1,49 @@
-<h1>我的水晶手鍊線上試戴</h1>
-<p>網站測試成功 🎉</p>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>水晶手鍊線上試戴</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+</head>
+<body>
+  <header class="wrap">
+    <h1>水晶手鍊線上試戴</h1>
+    <p class="sub">上傳手的照片，選款式，把手鍊拖到手腕上，下載示意圖。</p>
+  </header>
+
+  <main class="wrap grid">
+    <section class="panel">
+      <h2>1）上傳手部照片</h2>
+      <input id="handInput" type="file" accept="image/*" />
+      <p class="hint">建議：手腕清楚、光線均勻。</p>
+
+      <h2>2）選手鍊款式</h2>
+      <div class="row">
+        <select id="braceletSelect">
+          <option value="assets/bracelet-rosequartz.png">粉晶</option>
+          <option value="assets/bracelet-amethyst.png">紫水晶</option>
+          <option value="assets/bracelet-citrine.png">黃水晶</option>
+        </select>
+        <button id="addBraceletBtn">放上手鍊</button>
+      </div>
+
+      <h2>3）下載</h2>
+      <div class="row">
+        <button id="downloadBtn" class="primary">下載示意圖</button>
+        <button id="resetBtn">重置</button>
+      </div>
+
+      <p class="privacy">照片只在你的瀏覽器內處理，不會上傳到伺服器（這版純前端）。</p>
+    </section>
+
+    <section class="stageWrap">
+      <div id="stage" class="stage"></div>
+      <p class="hint center">點選手鍊可拖曳；四角縮放；可旋轉。</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
